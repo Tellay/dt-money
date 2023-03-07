@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --bg-primary: #202024;
+    --bg-secundary: #121214;
+    --btn-primary: #00875F;
+    --btn-primaryHover: #00B37E;
+    --btn-secundaryHover: #AA2834;
+    --card-primary: #323238;
+    --card-secundary: #015F43;
+    --text-primary: #E1E1E6;
+    --text-secundary: #C4C4CC;
+    --text-tertiary: #F75A68;
+    --card-tertiary: #29292E;
+    --icon-primary: #7C7C8A;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 160%;
+    background-color: var(--bg-primary);
+}
