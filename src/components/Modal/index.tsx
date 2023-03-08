@@ -22,8 +22,8 @@ const Modal: React.FC<Props> = ({ isOpen, closeModal })=> {
   }
 
   return isOpen && (
-    <div className="absolute top-0 bottom-0 left-0 right-0 flex justify-center items-center px-4 bg-black bg-opacity-75">
-      <form className="max-w-[535px] w-full mx-auto py-6 sm:py-10 px-7 sm:px-12 bg-bgPrimary rounded-md shadow-modalShadow ">
+    <div className="fixed inset-0 flex justify-center items-center px-4 bg-black bg-opacity-75">
+      <form className="max-w-[535px] w-full mx-auto py-7 sm:py-10 px-7 sm:px-12 bg-bgPrimary rounded-md shadow-modalShadow ">
         <XIcon 
           onClick={handleCloseModal}
           className="ml-auto text-iconPrimary cursor-pointer" 

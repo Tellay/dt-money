@@ -58,33 +58,31 @@ const Transactions: React.FC = () => {
 
       <div className="grid grid-cols-1 gap-2 lg:hidden">
         {transactions.map((transaction) => (
-          <div className="bg-cardTertiary p-6 rounded-[5px] hover:shadow-yellow-200">
-            <div>
-                <div className="text-textSecundary truncate">
-                  {transaction.title}
-                </div>
-                <div
-                  className={`mt-[12px] font-bold text-xl ${
-                    transaction.type === "income"
-                      ? "text-btnPrimary"
-                      : "text-textTertiary"
-                  }`}
-                >
-                  {transaction.value.toLocaleString("pt-BR", {
-                    style: "currency",
-                    currency: "BRL",
-                  })}
-              </div>
+          <div className="bg-cardTertiary p-6 rounded-[5px] hover:shadow-yellow-200" key={transaction.id}>
+            <div className="text-textSecundary truncate">
+              {transaction.title}
+            </div>
+            <div
+              className={`mt-[12px] font-bold text-xl ${
+                transaction.type === "income"
+                  ? "text-btnPrimary"
+                  : "text-textTertiary"
+              }`}
+            >
+              {transaction.value.toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </div>
 
-              <div className="flex flex-col sm:flex-row sm:justify-between mt-4 ">
-                <div className="flex items-center gap-2 text-iconPrimary truncate">
-                  <TagSimple size={16} />
-                  {transaction.category}
-                </div>
-                <div className="flex items-center gap-2 text-iconPrimary">
-                  <CalendarBlank size={16} />
-                  {transaction.createdAt}
-                </div>
+            <div className="flex flex-col sm:flex-row sm:justify-between mt-4 ">
+              <div className="flex items-center gap-2 text-iconPrimary truncate">
+                <TagSimple size={16} />
+                {transaction.category}
+              </div>
+              <div className="flex items-center gap-2 text-iconPrimary">
+                <CalendarBlank size={16} />
+                {transaction.createdAt}
               </div>
             </div>
           </div>
