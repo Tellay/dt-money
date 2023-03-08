@@ -3,6 +3,8 @@ import { useTransactions } from "../../hooks/useTransactions";
 
 import { TagSimple, CalendarBlank } from "phosphor-react";
 
+import Value from "../Value";
+
 const Transactions: React.FC = () => {
   const { transactions } = useTransactions();
 
@@ -39,10 +41,7 @@ const Transactions: React.FC = () => {
                       : "text-textTertiary"
                   } text-left`}
                 >
-                  {transaction.value.toLocaleString("pt-BR", {
-                    style: "currency",
-                    currency: "BRL",
-                  })}
+                  <Value value={transaction.value} />
                 </td>
                 <td className="py-5 px-8 text-textSecundary text-left">
                   {transaction.category}
@@ -69,10 +68,7 @@ const Transactions: React.FC = () => {
                   : "text-textTertiary"
               }`}
             >
-              {transaction.value.toLocaleString("pt-BR", {
-                style: "currency",
-                currency: "BRL",
-              })}
+              <Value value={transaction.value} />
             </div>
 
             <div className="flex flex-col sm:flex-row sm:justify-between mt-4 ">
